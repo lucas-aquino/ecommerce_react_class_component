@@ -2,7 +2,6 @@ import { Component } from "react";
 import Producto from "./Producto";
 
 
-
 class Productos extends Component {
 
   
@@ -13,13 +12,13 @@ class Productos extends Component {
       agregarAlCarro 
     } = this.props
     return(
-      <section className='grid grid-cols-4 gap-8 container p-8'>
+      <div className='grid grid-cols-3 gap-8 p-8 w-full'>
         {productos.map(producto => <Producto 
-          key={producto.nombre}
+          key={producto.id}
           agregarAlCarro={agregarAlCarro}
           producto={producto}
         />)}
-      </section>
+      </div>
     )
   }
 }

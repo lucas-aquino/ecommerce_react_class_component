@@ -1,24 +1,32 @@
 import { Component } from 'react'
 import Productos from './components/Productos'
+import Layout from './components/Layout'
+import NavBar from './components/NavBar'
 import './App.css'
+
 
 class App extends Component {
 
   state = {
-    productos:[ 
-      { nombre: 'Tomate', precio: 1200, img: '/img/productos/tomate.jpg' },
-      { nombre: 'Arbejas', precio: 2500, img: '/img/productos/arbejas.jpg' },
-      { nombre: 'Lechuga', precio: 500, img: '/img/productos/lechuga.jpg' }
-    ]
+    productos:[]
+  }
+
+  componentDidMount() {
+    fetch('https://fakestoreapi.com/products')
+    .then((res) => res.json())
+    .then((productos) => this.setState({ productos }))
   }
   
   render(){
     return (
       <div>
-        <Productos 
-          agregarAlCarro={() => console.log()}
-          productos={this.state.productos}
-        />
+        <NavBar />
+        <Layout>
+          <Productos 
+            agregarAlCarro={() => console.log()}
+            productos={this.state.productos}
+          />
+        </Layout>
       </div>
     )
   }

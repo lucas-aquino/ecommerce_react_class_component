@@ -5,7 +5,7 @@ import { Component } from "react";
 class Boton extends Component {
 
   render(){
-    const { children } = this.props
+    const { children, className } = this.props
     const styles = [
       'bg-cyan-500', 
       'w-full',
@@ -19,9 +19,9 @@ class Boton extends Component {
       'duration-150', 
       'ease-in-out', 
       'text-slate-300',
-      'self-end',
       'active:scale-x-105',
-      'tracking-wide'
+      'tracking-wide',
+      ...className?.split(' ')
     ]
     
     return(
