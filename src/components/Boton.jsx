@@ -25,7 +25,7 @@ class Boton extends Component {
     ]
     
     return(
-      <button className={styles.join(' ')}>{children}</button>
+      <button className={styles.join(' ')} onClick={this.props.onClick}>{children}</button>
     )
   }
 }

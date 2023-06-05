@@ -12,7 +12,7 @@ class Productos extends Component {
       agregarAlCarro 
     } = this.props
     return(
-      <div className='grid grid-cols-3 gap-8 p-8 w-full'>
+      <div className='grid grid-cols-3 gap-8 p-8 w-full snap-y'>
         {productos.map(producto => <Producto 
           key={producto.id}
           agregarAlCarro={agregarAlCarro}
