@@ -5,7 +5,7 @@ class CarroItem extends Component {
   render() {
     const { carroItem, eliminarDelCarro } = this.props
     return(
-      <div className="text-sm py-3 grid grid-flow-row-dense grid-cols-6 place-items-stretch hover:bg-slate-800 transition duration-150 ease-in-out">
+      <div className="text-sm py-3 grid grid-flow-row-dense grid-cols-6 place-items-stretch hover:bg-slate-800 transition duration-150 ease-in-out rounded-md">
         <div className="col-span-4 pl-3 pr-1 pt-1 truncate flex justify-center content-center">
           <span className="truncate w-full">{carroItem.title}</span>
         </div>
