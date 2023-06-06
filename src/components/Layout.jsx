@@ -8,10 +8,8 @@ class Layout extends Component {
   render() {
     const { children } = this.props
     return(
-      <div className='flex justify-center'>
-        <section className='w-7/12 container'>
-          {children}
-        </section>
+      <div className='self-center w-7/12 h-full overflow-y-scroll scrollbar scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-thumb-slate-600 scrollbar-track-slate-900'>
+        {children}
       </div>
     )
   }

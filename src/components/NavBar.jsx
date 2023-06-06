@@ -9,14 +9,14 @@ class NavBar extends Component {
 
   render() {
 
-    const { carro } = this.props
+    const { carro, eliminarDelCarro } = this.props
 
     const navbarLinks = [
       {text: 'Inicio', href: '#'}
     ]
 
     return(
-      <nav className="bg-slate-900 sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-70 z-50 shadow-xl select-none">
+      <nav className="flex-none bg-slate-900 top-0 backdrop-filter backdrop-blur-lg bg-opacity-70 z-50 shadow-xl select-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -35,7 +35,7 @@ class NavBar extends Component {
             <div className="hidden md:block">
               <div className="ml-4 flex items-center md:ml-6">
                 {/* Aquí puedes agregar botones, elementos de usuario, etc. */}
-                <Carro carro={carro} />
+                <Carro carro={carro} eliminarDelCarro={eliminarDelCarro}/>
               </div>
             </div>
           </div>

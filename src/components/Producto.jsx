@@ -6,7 +6,7 @@ class Producto extends Component {
 
   render(){
 
-    const { producto, agregarAlCarro } = this.props
+    const { producto, agregarAlCarro} = this.props
     return(
       <div className='bg-slate-800 rounded-lg flex flex-col overflow-hidden select-none shadow-md shadow-2xl border-l-indigo-500 snap-start'>
         <div className='h-80 w-full overflow-hidden'>

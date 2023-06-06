@@ -9,10 +9,10 @@ class Productos extends Component {
   render(){
     const { 
       productos, 
-      agregarAlCarro 
+      agregarAlCarro
     } = this.props
     return(
-      <div className='grid grid-cols-3 gap-8 p-8 w-full snap-y'>
+      <div className='grid grid-cols-3 gap-8 p-8 w-full'>
         {productos.map(producto => <Producto 
           key={producto.id}
           agregarAlCarro={agregarAlCarro}

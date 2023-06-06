@@ -37,11 +37,28 @@ class App extends Component {
       })
     })
   }
+
+  eliminarDelCarro = (producto) => {
+    const { carro } = this.state
+
+    if(carro.find(x => (x.id === producto.id && x.cantidad > 1))) {
+      const nuevoCarro = carro.map(nuevoProducto => nuevoProducto.id === producto.id ? 
+        ({
+          ...nuevoProducto, 
+          cantidad: nuevoProducto.cantidad - 1
+        }) : nuevoProducto)
+      return this.setState({ carro: nuevoCarro })
+    }
+
+    return this.setState({
+      carro: this.state.carro.filter((x => x.id !== producto.id))
+    })
+  }
   
   render(){
     return (
-      <div>
-        <NavBar carro={this.state.carro}/>
+      <div className='h-screen flex flex-col overflow-y-hidden'>
+        <NavBar carro={this.state.carro} eliminarDelCarro={this.eliminarDelCarro} />
         <Layout>
           <Productos 
             agregarAlCarro={this.agregarAlCarro}
